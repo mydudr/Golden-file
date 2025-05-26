@@ -6,8 +6,8 @@ body {
     box-sizing: border-box;
     direction: rtl; /* لجعل النص يبدأ من اليمين لليسار */
     text-align: right; /* لمحاذاة النص لليمين */
-    background-color: #f4f4f4;
-    color: #333;
+    background-color: #1a1a1a; /* لون أسود أساسي للخلفية */
+    color: #e0e0e0; /* لون نص فاتح للتباين */
 }
 
 .container {
@@ -18,7 +18,12 @@ body {
 }
 
 h1, h2, h3, h4 {
-    color: #0056b3; /* لون أزرق جذاب للعناوين */
+    color: #FFD700; /* لون ذهبي للعناوين */
+}
+
+/* لتلوين كلمة "ملفك" باللون الذهبي */
+.golden-text {
+    color: #FFD700; /* لون ذهبي */
 }
 
 p {
@@ -26,49 +31,52 @@ p {
 }
 
 a {
-    color: #0056b3;
+    color: #FFD700; /* لون ذهبي للروابط */
     text-decoration: none;
 }
 
 a:hover {
     text-decoration: underline;
+    color: #e0ac00; /* ذهبي أغمق عند التحويم */
 }
 
 .button {
     display: inline-block;
-    background-color: #007bff; /* لون أزرق أساسي للأزرار */
-    color: white;
+    background-color: #FFD700; /* لون ذهبي للأزرار */
+    color: #1a1a1a; /* لون نص داكن للأزرار */
     padding: 10px 20px;
     border-radius: 5px;
     margin-top: 20px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: bold;
 }
 
 .button:hover {
-    background-color: #0056b3;
+    background-color: #e0ac00; /* ذهبي أغمق عند التحويم */
+    color: #000000; /* أسود خالص للنص عند التحويم */
     text-decoration: none;
 }
 
 /* تنسيقات الرأس (Header) */
 header {
-    background-color: #007bff;
+    background-color: #000000; /* لون أسود خالص للرأس */
     color: white;
     padding: 1rem 0;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* ظل داكن للرأس */
 }
 
 header h1 {
     margin: 0;
-    color: white;
-    float: right; /* لجعل العنوان يطفو على اليمين */
+    color: #FFD700; /* لون ذهبي لاسم الموقع */
+    float: right;
 }
 
 header nav ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    overflow: hidden; /* لمسح التعويم */
-    text-align: left; /* لجعل عناصر القائمة على اليسار */
+    overflow: hidden;
+    text-align: left;
 }
 
 header nav ul li {
@@ -77,27 +85,29 @@ header nav ul li {
 }
 
 header nav ul li a {
-    color: white;
+    color: white; /* لون أبيض لروابط التنقل */
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
 header nav ul li a:hover {
-    color: #e2e6ea;
+    color: #FFD700; /* ذهبي عند التحويم */
     text-decoration: none;
 }
 
 /* تنسيقات قسم البطل (Hero Section) */
 #hero {
-    background-color: #e2e6ea;
-    color: #333;
+    background-color: #2a2a2a; /* لون رمادي داكن للخلفية */
+    color: #e0e0e0;
     text-align: center;
     padding: 80px 0;
+    border-bottom: 3px solid #FFD700; /* خط ذهبي في الأسفل */
 }
 
 #hero h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
+    color: #FFD700; /* لون ذهبي */
 }
 
 #hero p {
@@ -108,19 +118,20 @@ header nav ul li a:hover {
 /* تنسيقات الأقسام العامة */
 section {
     padding: 60px 0;
-    background-color: white;
+    background-color: #1a1a1a; /* لون أسود أساسي للأقسام */
     margin-bottom: 20px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.5); /* ظل داكن */
 }
 
-section:nth-child(even) { /* خلفية فاتحة للأقسام الزوجية */
-    background-color: #f9f9f9;
+section:nth-child(even) { /* خلفية أغمق قليلاً للأقسام الزوجية */
+    background-color: #202020;
 }
 
 section h3 {
     text-align: center;
     margin-bottom: 40px;
     font-size: 2rem;
+    color: #FFD700; /* لون ذهبي */
 }
 
 /* تنسيقات شبكة الخدمات (Service Grid) */
@@ -132,57 +143,127 @@ section h3 {
 }
 
 .service-item {
-    background-color: #ffffff;
-    border: 1px solid #ddd;
+    background-color: #252525; /* لون خلفية عناصر الخدمة */
+    border: 1px solid #333; /* حدود داكنة */
     border-radius: 8px;
     padding: 25px;
     text-align: center;
-    flex: 1 1 calc(33% - 40px); /* ثلاث عناصر في الصف مع مسافات */
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    flex: 1 1 calc(33% - 40px);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3); /* ظل أعمق */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .service-item:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.5);
 }
 
 .service-item h4 {
-    color: #007bff;
+    color: #FFD700; /* لون ذهبي للعناوين الفرعية للخدمات */
     margin-top: 0;
     font-size: 1.4rem;
 }
 
-/* تنسيقات نموذج الاتصال */
-#contact form {
-    display: flex;
-    flex-direction: column;
-    max-width: 500px;
+/* تنسيقات قسم أخبار المنح */
+#grants-news .news-item {
+    background-color: #252525;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    max-width: 800px;
     margin: 0 auto;
-    gap: 15px;
 }
 
-#contact form input[type="text"],
-#contact form input[type="email"],
-#contact form textarea {
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 1rem;
-    width: 100%;
-    box-sizing: border-box; /* لضمان أن الحشوة لا تزيد العرض */
+#grants-news .news-item h4 {
+    color: #FFD700;
+    margin-bottom: 15px;
+    font-size: 1.6rem;
+    text-align: right;
 }
 
-#contact form textarea {
-    resize: vertical; /* للسماح بتغيير حجم مربع النص عموديا */
+#grants-news .news-item ul {
+    list-style-type: disc;
+    padding-right: 20px;
+    margin-bottom: 15px;
+    color: #cccccc; /* لون نص فاتح للقوائم */
 }
+
+#grants-news .news-item ul li {
+    margin-bottom: 8px;
+}
+
+/* تنسيقات روابط التواصل (واتساب وفيسبوك) */
+.whatsapp-link, .facebook-link {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 15px; /* زيادة المسافة بين الروابط */
+    color: #e0e0e0; /* لون نص فاتح للروابط */
+    font-weight: bold;
+    font-size: 1.1rem; /* تكبير حجم الخط قليلاً */
+}
+
+.whatsapp-link:hover, .facebook-link:hover {
+    color: #FFD700; /* لون ذهبي عند التحويم */
+}
+
+/* تنسيقات قسم زر التقديم النهائي */
+#apply-now {
+    background-color: #000000; /* أسود خالص */
+    color: white;
+    text-align: center;
+    padding: 60px 0;
+    margin-top: 20px;
+    border-top: 3px solid #FFD700; /* خط ذهبي في الأعلى */
+}
+
+#apply-now h3 {
+    color: #FFD700; /* لون ذهبي */
+    margin-bottom: 20px;
+}
+
+#apply-now p {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+}
+
+.whatsapp-buttons-footer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.whatsapp-buttons-footer .button {
+    background-color: #25D366; /* لون أخضر للواتساب */
+    color: white; /* نص أبيض لأزرار الواتساب */
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin-top: 0;
+}
+
+.whatsapp-buttons-footer .button:hover {
+    background-color: #1DA851; /* أخضر أغمق عند التحويم */
+}
+
+.whatsapp-buttons-footer .button img {
+    margin-right: 8px; /* مسافة بين النص والأيقونة (تذكر أن اللغة RTL) */
+    filter: invert(100%); /* لجعل أيقونة الواتساب بيضاء على خلفية خضراء إذا كانت أصلها سوداء */
+}
+
 
 /* تنسيقات التذييل (Footer) */
 footer {
-    background-color: #333;
-    color: white;
+    background-color: #000000; /* أسود خالص */
+    color: #e0e0e0;
     text-align: center;
     padding: 20px 0;
     margin-top: 30px;
+    border-top: 1px solid #333; /* خط فاصل خفيف */
 }
 
 footer p {
@@ -207,13 +288,22 @@ footer p {
     }
 
     .service-item {
-        flex: 1 1 calc(50% - 20px); /* عمودين في الصف على الشاشات الأصغر */
+        flex: 1 1 calc(50% - 20px);
+    }
+
+    .whatsapp-buttons-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+    .whatsapp-buttons-footer .button {
+        width: 80%;
+        margin-bottom: 15px;
     }
 }
 
 @media (max-width: 480px) {
     .service-item {
-        flex: 1 1 100%; /* عمود واحد في الصف على الهواتف */
+        flex: 1 1 100%;
     }
 
     #hero h2 {
